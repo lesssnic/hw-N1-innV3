@@ -4,11 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <script src="./assets/js/app.js"></script>
-    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script defer src="./assets/js/app.js"></script>
+    
+    <title>ИНН</title>
 </head>
 <body>
-    <h1>Hi Anton!</h1>
+    <div class="container" id="app">
+        <h1>Валидация ИНН</h1>
+        <div class="form-group d-flex flex-row py-1">
+            <label class="w-30" for="inn-code">Введите ИНН</label>
+            <input v-model='innCode' class="form-control" type="number" >
+        </div>
+        <div>
+            <table class="table table-striped align-self-center" >
+                <thead>
+                    <tr>
+                        <th scope = "col" >ИНН</th>
+                        <th scope = "col" >Валидация</th>
+                        <th scope = "col" >М/Ж</th>
+                        <th scope = "col" >Дата рождения</th>
+                        <th scope = "col" >Полных лет</th>
+                        <th scope = "col" >Зодиак</th>
+                        <th scope = "col" >Символ года</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope = "col" >{{innCode}}</th>
+                        <th scope = "col" >{{validityFunc}}</th>
+                        <th scope = "col" >{{sexFunc}}</th>
+                        <th scope = "col" >{{birthdayFunc}}</th>
+                        <th scope = "col" >{{fullYearsFunc}}</th>
+                        <th scope = "col" >{{signsFunc}}</th>
+                        <th scope = "col" >{{calendarFunc}}</th>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
 </body>
 </html>
